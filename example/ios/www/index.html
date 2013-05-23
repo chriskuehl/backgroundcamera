@@ -21,22 +21,35 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
         <title>Hello World</title>
+        
+        <style>
+        	#pictureHolder {
+        		border: solid 2px red;
+        		width: 640px;
+        		height: 480px;
+        		
+        		position: absolute;
+        		right: 30px;
+        		bottom: 30px;
+        	}
+        </style>
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+            <h1>BackgroundCamera Demo</h1>
+            <p>Tap the button below to take a picture.</p>
+            <p><button id="pictureButton" style="width: 200px; height: 50px;">Take Picture</button></p>
+            <div id="pictureHolder">
+            	<img id="picture" width="640" height="480" />
             </div>
         </div>
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
+        <script>
+        	pictureButton.onclick = function() {
+        		alert("click");
+        	};
         </script>
     </body>
 </html>
