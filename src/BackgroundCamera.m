@@ -1,15 +1,18 @@
 //
-//  CDVBackgroundCamera.m
-//  JacketeerDistribution
+//  BackgroundCamera.m
+//  
+//  BackgroundCamera by Chris Kuehl
+//  PhoneGap plugin for taking pictures in the background on iOS.
+//  https://github.com/chriskuehl/backgroundcamera
 //
-//  Created by Chris on 5/8/13.
-//
+//  Released as free software under the MIT license; see GitHub repository
+//  for details.
 //
 
-#import "CDVBackgroundCamera.h"
+#import "BackgroundCamera.h"
 #import <Cordova/CDV.h>
 
-@implementation CDVBackgroundCamera
+@implementation BackgroundCamera
 
 - (void)echo:(CDVInvokedUrlCommand*)command
 {
