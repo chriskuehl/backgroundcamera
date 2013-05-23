@@ -37,6 +37,14 @@
         </style>
     </head>
     <body>
+    	<!-- error handling -->
+	<script>
+		// http://stackoverflow.com/a/14939891/450164
+		window.onerror = function(message, url, lineNumber) {
+			console.log("!!!! ERROR: " + message + " in " + url + " at line " + lineNumber);
+		};
+	</script>
+	
         <div class="app">
             <h1>BackgroundCamera Demo</h1>
             <p>Tap the button below to take a picture.</p>
@@ -45,11 +53,21 @@
             	<img id="picture" width="640" height="480" />
             </div>
         </div>
+        
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
+        <script type="text/javascript" src="bgcamera.js"></script>
         <script>
+        document.addEventListener("deviceready", function() {
+        	var backgroundCamera = cordova.require("cordova/plugin/backgroundcamera");
+        	
         	pictureButton.onclick = function() {
-        		alert("click");
+        		backgroundCamera.takePicture(function(picture) {
+        			setTimeout(function() {
+        				alert("it worked");
+        			}, 10);
+        		});
         	};
+        });
         </script>
     </body>
 </html>
