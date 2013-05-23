@@ -14,7 +14,7 @@
 
 @implementation BackgroundCamera
 
-- (void)echo:(CDVInvokedUrlCommand*)command
+- (void)takePicture:(CDVInvokedUrlCommand*)command
 {
 	[self.commandDelegate runInBackground:^{
 		//NSString* echo = [command.arguments objectAtIndex:0];

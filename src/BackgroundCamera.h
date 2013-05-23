@@ -13,6 +13,6 @@
 
 @interface BackgroundCamera : CDVPlugin
 
-- (void)echo:(CDVInvokedUrlCommand*)command;
+- (void)takePicture:(CDVInvokedUrlCommand*)command;
 
 @end
