@@ -13,9 +13,16 @@ BackgroundCamera has been tested with PhoneGap 2.7.0 on iOS 6.
 ## Usage
 To take a picture, simply call `backgroundCamera.takePicture(callback)`.
 
+    // get the backgroundCamera plugin
     var backgroundCamera = cordova.require("cordova/plugin/backgroundcamera");
     
+    // take a picture asynchronously; provide a callback
     backgroundCamera.takePicture(function(b64) {
+        // b64 is a base64-encoded JPEG
+        // it can be easily inserted into an <img>, sent to a server,
+        // processed, etc.
+        // 
+        // insert into an image
         var img = document.getElementById("picture");
         img.src = "data:image/jpeg;base64," + b64;
     });
