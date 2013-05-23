@@ -27,8 +27,8 @@
         <style>
         	#pictureHolder {
         		border: solid 2px red;
-        		width: 640px;
-        		height: 480px;
+        		width: 480px;
+        		height: 640px;
         		
         		position: absolute;
         		right: 30px;
@@ -50,7 +50,7 @@
             <p>Tap the button below to take a picture.</p>
             <p><button id="pictureButton" style="width: 200px; height: 50px;">Take Picture</button></p>
             <div id="pictureHolder">
-            	<img id="picture" width="640" height="480" />
+            	<img id="picture" src="" width="480" height="640" />
             </div>
         </div>
         
@@ -61,10 +61,9 @@
         	var backgroundCamera = cordova.require("cordova/plugin/backgroundcamera");
         	
         	pictureButton.onclick = function() {
-        		backgroundCamera.takePicture(function(picture) {
-        			setTimeout(function() {
-        				alert("it worked");
-        			}, 10);
+        		backgroundCamera.takePicture(function(b64) {
+        			var img = document.getElementById("picture");
+        			img.src = "data:image/jpeg;base64," + b64;
         		});
         	};
         });
