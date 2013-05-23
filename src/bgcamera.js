@@ -9,14 +9,18 @@
 //  for details.
 //
 
-window.bgSnapPicture = function(callback) {
-	log("Snapping picture...");
-	
-    cordova.exec(function(ret) {
-    	console.log("Received callback in lib, sending to program...");
-        callback(ret);
-    }, function(err) {
-    	console.log("Received error callback in lib, sending null to program...");
-	    callback(null);
-    }, "BackgroundCamera", "echo", ["a"]);
-};
+
+cordova.define("cordova/plugin/backgroundcamera", 
+	function(require, exports, module) {
+		var exec = require("cordova/exec");
+		
+		var BackgroundCamera = function() { }
+		BackgroundCamera.prototype.takePicture = function(callback) {
+			console.log("taking pic");
+			exec(callback, callback, "BackgroundCamera", "takePicture", []);
+		};
+		
+		var backgroundCamera = new BackgroundCamera();
+		module.exports = backgroundCamera;
+	}
+);
