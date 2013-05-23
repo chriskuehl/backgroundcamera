@@ -36,7 +36,8 @@ To install BackgroundCamera in your PhoneGap project,
 1. Copy `BackgroundCamera.h` and `BackgroundCamera.m` into the `Classes` folder of your project.
 2. Copy `bgcamera.js` into the `www` directory of your project (or some subdirectory).
 3. Add the following entry to your `config.xml` file in the `<plugins>` section:
-       <plugin name="BackgroundCamera" value="BackgroundCamera" />
+        
+    <pre>&lt;plugin name="BackgroundCamera" value="BackgroundCamera" /&gt;</pre>
 4. Include `bgcamera.js` in your HTML pages.
 
 ## License
