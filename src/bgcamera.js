@@ -10,7 +10,7 @@
 //
 
 
-cordova.define("cordova/plugin/backgroundcamera", 
+cordova.define("cordova/plugin/backgroundcamera",
 	function(require, exports, module) {
 		var exec = require("cordova/exec");
 		
