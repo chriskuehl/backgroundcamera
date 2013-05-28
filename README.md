@@ -8,7 +8,7 @@ The call is asynchronous, allowing you to keep the UI responsive while you wait 
 
 Currently only the front-facing camera is supported, but it should be trivial to also support the rear camera.
 
-BackgroundCamera has been tested with PhoneGap 2.7.0 on iOS 6.
+BackgroundCamera has only been tested with an iPad 2 using PhoneGap 2.7.0 on iOS 6.
 
 ## Usage
 To take a picture, simply call `backgroundCamera.takePicture(callback)`.
